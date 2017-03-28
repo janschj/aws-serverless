@@ -47,10 +47,11 @@ Resources:
         AttributeName: passwrd
         AttributeType: S
     KeySchema: 
-      - 
         AttributeName: id
         KeyType: HASH
        TableName: !Sub 'user-${Stage}'
+       
+       
 Outputs:
   ApiUrl:
     Description: URL for application
