@@ -36,25 +36,6 @@ Resources:
   Table:
     Type: AWS::Serverless::SimpleTable
 
-  UserTable: 
-    Type: AWS::DynamoDB::Table
-    Properties: 
-    AttributeDefinitions: 
-      - 
-        AttributeName: id
-        AttributeType: S
-      - 
-        AttributeName: user_name
-        AttributeType: S
-      - 
-        AttributeName: passwrd
-        AttributeType: S
-    KeySchema: 
-      - 
-        AttributeName: id
-        KeyType: HASH
-      TableName: !Sub 'user-${Stage}'
-
 Outputs:
   ApiUrl:
     Description: URL for application
