@@ -25,6 +25,7 @@ Resources:
       Environment:
         Variables:
           DDB_TABLE: !Ref Table
+          STAGE_NAME: ${Stage}
       Events:
         GetResource:
           Type: Api
