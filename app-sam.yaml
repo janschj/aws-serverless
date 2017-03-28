@@ -25,7 +25,6 @@ Resources:
       Environment:
         Variables:
           DDB_TABLE: !Ref Table
-          ENV_NAME: ${Stage}
       Events:
         GetResource:
           Type: Api
@@ -35,7 +34,6 @@ Resources:
 
   Table:
     Type: AWS::Serverless::SimpleTable
-
 
 Outputs:
   ApiUrl:
