@@ -29,6 +29,7 @@ public class LambdaHandler implements RequestHandler<AwsProxyRequest, AwsProxyRe
 
     @Override
     public AwsProxyResponse handleRequest(AwsProxyRequest awsProxyRequest, Context context) {
+    	System.out.println("XXX");
         return handler.proxy(awsProxyRequest, context);
     }
 }
