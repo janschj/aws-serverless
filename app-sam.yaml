@@ -37,22 +37,22 @@ Resources:
     Type: AWS::Serverless::SimpleTable
 
   UserTable: 
-    Type: "AWS::DynamoDB::Table"
+    Type: AWS::DynamoDB::Table
     Properties: 
     AttributeDefinitions: 
       - 
-        AttributeName: "id"
-        AttributeType: "S"
+        AttributeName: id
+        AttributeType: S
       - 
-        AttributeName: "user_name"
-        AttributeType: "S"
+        AttributeName: user_name
+        AttributeType: S
       - 
-        AttributeName: "passwrd"
-        AttributeType: "S"
+        AttributeName: passwrd
+        AttributeType: S
     KeySchema: 
       - 
-        AttributeName: "id"
-        KeyType: "HASH"
+        AttributeName: id
+        KeyType: HASH
       TableName: !Sub 'user-${Stage}'
 
 Outputs:
