@@ -37,7 +37,7 @@ Resources:
     Type: AWS::Serverless::SimpleTable
 
  BeerDynamo:
-      Type: 'AWS::DynamoDB::Table'
+      Type: AWS::DynamoDB::Table
       Properties:
         AttributeDefinitions:
           -
