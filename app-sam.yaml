@@ -36,7 +36,18 @@ Resources:
   Table:
     Type: AWS::Serverless::SimpleTable
 
-Outputs:
+myDynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+      - AttributeName: id
+        AttributeType: S
+      KeySchema:
+      - AttributeName: id
+        KeyType: HASH
+      TableName: UsrTable
+ 
+ Outputs:
   ApiUrl:
     Description: URL for application
     Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/pets'
