@@ -36,9 +36,7 @@ Resources:
   Table:
     Type: AWS::Serverless::SimpleTable
 
-
-        
- Outputs:
+Outputs:
   ApiUrl:
     Description: URL for application
     Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/pets'
