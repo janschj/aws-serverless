@@ -24,7 +24,7 @@ Resources:
       Timeout: 20
       Environment:
         Variables:
-          DDB_TABLE: !Ref myTable
+          DDB_TABLE: !Ref Table
           ENV_NAME: !Sub '${Stage}'
       Events:
         GetResource:
@@ -33,7 +33,7 @@ Resources:
             Path: /{proxy+}
             Method: any
 
-  myTable:
+  Table:
     Type: AWS::Serverless::SimpleTable
 
 
