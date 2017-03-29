@@ -51,7 +51,7 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 1
         WriteCapacityUnits: 1
-      TableName: 'user-${stage}'
+      TableName: !Sub 'user-${stage}'
 
 
 Outputs:
