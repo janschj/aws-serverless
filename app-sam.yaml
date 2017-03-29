@@ -24,7 +24,7 @@ Resources:
       Timeout: 20
       Environment:
         Variables:
-          DDB_TABLE: !Ref Table
+          DDB_TABLE: !Ref myTable
           ENV_NAME: !Sub '${Stage}'
       Events:
         GetResource:
@@ -33,24 +33,10 @@ Resources:
             Path: /{proxy+}
             Method: any
 
-  Table:
+  myTable:
     Type: AWS::Serverless::SimpleTable
 
- BeerDynamo:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        AttributeDefinitions:
-          -
-            AttributeName: id
-            AttributeType: S
-        KeySchema:
-          -
-            AttributeName: id
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-        TableName: slsbeer
+
         
  Outputs:
   ApiUrl:
