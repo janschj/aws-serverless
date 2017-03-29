@@ -36,19 +36,24 @@ Resources:
   mTable:
     Type: AWS::Serverless::SimpleTable
     
-DynamoDbTable:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        TableName: my-table
-        AttributeDefinitions:
-          - AttributeName: my_key
-            AttributeType: S
-        KeySchema:
-          - AttributeName: my_key
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 5
-          WriteCapacityUnits: 5
+  UserDynamo:
+    Type: 'AWS::DynamoDB::Table'
+    DeletionPolicy: Retain
+    Properties:
+      AttributeDefinitions:
+        -
+          AttributeName: id
+          AttributeType: S
+      KeySchema:
+        -
+          AttributeName: id
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      TableName: 'user-${stage}'
+
+
 Outputs:
   ApiUrl:
     Description: URL for application
